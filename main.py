@@ -37,7 +37,7 @@ def output():
     sorted_items = sorted(my_dict.items(), key=lambda x: x[1], reverse=True)
     del sorted_items[0]
     for key,value in sorted_items:
-         print(f"The {key} character is found {value} times")
+         print(f"The '{key}' character is found '{value}' times")
 
     print("--- End report ---")
 
