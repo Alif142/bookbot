@@ -27,9 +27,17 @@ def count_characters():
         character_count = count[main_character]
         character_dict.update({main_character : character_count})
 
-    print(character_dict)
-count_characters()
-        
+    return character_dict
 
+
+def output():
+    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"{count_words()} words found in the document...")
+    my_dict = count_characters()
+    for key,value in my_dict:
+            print(f"The '{my_dict[key]} character was found {my_dict[value]} times.'")
+
+        
+output()
 
 
