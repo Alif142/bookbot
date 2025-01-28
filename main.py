@@ -14,7 +14,8 @@ def count_words():
     word_count = 0
     for word in words:
         word_count+=1
-    print(word_count)
+    return word_count
+
 
 def count_characters():
     book_string = main()
@@ -29,15 +30,16 @@ def count_characters():
 
     return character_dict
 
-
 def output():
     print("--- Begin report of books/frankenstein.txt ---")
-    print(f"{count_words()} words found in the document...")
+    print(f"---{count_words()} words were found in the douument---")
     my_dict = count_characters()
-    for key,value in my_dict:
-            print(f"The '{my_dict[key]} character was found {my_dict[value]} times.'")
+    sorted_items = sorted(my_dict.items(), key=lambda x: x[1], reverse=True)
+    del sorted_items[0]
+    for key,value in sorted_items:
+         print(f"The {key} character is found {value} times")
 
-        
+    print("--- End report ---")
+
+
 output()
-
-
